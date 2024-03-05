@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    background-color: hsl(240, 78%, 98%);
+    min-height: 100vh;
+    font-weight: 700;
+    background-image: url(images/bg-top.svg), url(images/bg-bottom.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right top, left bottom;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.card{
+    padding: 60px 20px;
+    text-align: center;
+}
+.title{
+    font-size: 32px;
+    color: hsl(233, 13%, 49%);
+}
+.switch input{
+    opacity: 0;
+}
+.switch{
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 32px;
+    cursor: pointer;
+}
+.slider{
+    position: absolute;
+    background: linear-gradient(180deg, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 35px;
+}
+.slider:hover{
+    background: hsl(236, 72%, 79%)
+}
+.slider::before{
+    content: '';
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 4px;
+    border-radius: 50%;
+    bottom: 4px;
+    transition: all .4s ease-in-out;
+}
+input:checked+ .slider::before{
+    transform: translateX(26px);
+}
+.pricing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(234, 14%, 74%);
+    padding: 50px 0px;
+}
+.pricing label{
+    margin: 0 20px;
+}
+.pricing-main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.pricing-box{
+    background: #fff;
+    padding: 50px 40px;
+    border-radius: 12px;
+    align-self: center;
+}
+.box-title{
+    color: hsl(233, 13%, 49%);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.annually,
+.monthly{
+    font-size: 32px;
+    color: hsl(232, 13%, 33%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.price{
+    font-size: 65px;
+    padding-left: 7px;
+}
+.monthly{
+    display: none;
+}
+ul{
+    list-style-type: none;
+    padding: 35px 0;
+}
+li{
+    color:  hsl(233, 13%, 49%);
+    border-bottom: 1px solid hsl(234, 14%, 74%);
+    padding: 18px 0;
+}
+
+li:first-child{
+    border-top: 1px solid hsl(234, 14%, 74%);
+}
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(180deg, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    width: 100%;
+    display: block;
+    padding: 16px 0px;
+    border-radius: 7px;
+    color: #fff;
+    border: 1px solid transparent;
+}
+a:hover{
+    background: transparent;
+    border-color: hsl(237, 63%, 64%);
+    color: hsl(237, 63%, 64%);
+}
+.featerd{
+    background: linear-gradient(180deg, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    padding: 80px 40px;
+    transform: scaleX(1.05);
+}
+.featerd p{
+    color: #fff;
+}
+.featerd ul li{
+    color: #fff;
+}
+.featerd a{
+    background: white;
+    color: hsl(237, 63%, 64%);;
+}
+.featerd a:hover{
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+@media screen and (max-width: 1024px) {
+    body{
+        font-size: 14px;
+    }
+    .price{
+        font-size: 50px;
+    }
+    .pricing-box{
+        padding: 40px 30px;
+    }
+    .featerd{
+        padding: 70px 30px;
+    }
+}
+@media screen and (max-width: 820px){
+ .pricing-main{
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+ }
+ .price{
+    font-size: 50px;
+}
+.pricing-box{
+    padding: 50px;
+}
+.featerd{
+    padding: 50px;
+    transform: scaleX(1);
+}
+}
